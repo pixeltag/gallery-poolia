@@ -20,7 +20,7 @@ const ImgModal = ({
       />
       <img className="modal-img" src={full} alt={title} />
       <div className="modal-body">
-        <h3>{title}</h3>
+        <h3>{title ? title : 'Image title'}</h3>
         <p>{description}</p>
       </div>
     </div>
