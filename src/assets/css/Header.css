@@ -1,10 +1,12 @@
 .header {
-    padding: 1.5rem 0;
+    padding: 0 0 1.5rem 0;
     border-bottom: 1px solid #ededed;
     margin-bottom: 2em;
 }
 
-h1 {
-    font-size: 60px;
+.logo-text {
+    font-size: 40px;
     line-height: 1;
+    color: #1d335c;
+    font-weight: 700;
 }
