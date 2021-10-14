@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImgModal component should match the snapshot 1`] = `"<div data-testid=\\"modal\\" class=\\"modal\\"><button class=\\"close-btn\\"><img src=\\"close.svg\\" alt=\\"Close modal\\"/></button><img data-testid=\\"img\\" class=\\"modal-img\\"/><div class=\\"modal-body\\"><h3 data-testid=\\"title\\">Image title</h3><p data-testid=\\"description\\"></p></div></div>"`;

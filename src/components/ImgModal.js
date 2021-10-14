@@ -11,17 +11,14 @@ const ImgModal = ({
     handleCloseModalCb();
   };
   return (
-    <div className={modalStatus ? "modal show" : "modal"}>
-      <img
-        src={closeIcon}
-        alt="Close modal"
-        className="close-btn"
-        onClick={() => handleCloseModal()}
-      />
-      <img className="modal-img" src={full} alt={title} />
+    <div data-testid="modal" className={modalStatus ? "modal show" : "modal"}>
+      <button onClick={() => handleCloseModal()} className="close-btn">
+        <img src={closeIcon} alt="Close modal" />
+      </button>
+      <img data-testid="img" className="modal-img" src={full} alt={title} />
       <div className="modal-body">
-        <h3>{title ? title : 'Image title'}</h3>
-        <p>{description}</p>
+        <h3 data-testid="title">{title ? title : "Image title"}</h3>
+        <p data-testid="description">{description}</p>
       </div>
     </div>
   );

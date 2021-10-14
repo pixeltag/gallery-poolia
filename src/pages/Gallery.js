@@ -10,13 +10,12 @@ const Gallery = () => {
   const [modal, setModal] = useState(false);
 
   useEffect(() => {
+     const fetchImagesData = async () => {
+       const response = await fetchImages();
+       setImgData(response.images);
+     }
     // get data from img service
     fetchImagesData();
-  }, []);
-
-  const fetchImagesData = useCallback(async () => {
-    const response = await fetchImages();
-    setImgData(response.images);
   }, []);
 
   useEffect(() =>  document.addEventListener("keydown", escapePressHandler, false));

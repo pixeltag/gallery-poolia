@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Gallery component should match the snapshot 1`] = `"<section class=\\"gallery-container\\"><h2 class=\\"hide\\">Gallery Section</h2><div class=\\"not-found\\">Loading</div></section><div class=\\"modal\\"><img src=\\"close.svg\\" alt=\\"Close modal\\" class=\\"close-btn\\"/><img class=\\"modal-img\\"/><div class=\\"modal-body\\"><h3>Image title</h3><p></p></div></div>"`;
+exports[`Gallery component should match the snapshot 1`] = `"<section class=\\"gallery-container\\"><h2 class=\\"hide\\">Gallery Section</h2><div class=\\"not-found\\">Loading</div></section><div data-testid=\\"modal\\" class=\\"modal\\"><button class=\\"close-btn\\"><img src=\\"close.svg\\" alt=\\"Close modal\\"/></button><img data-testid=\\"img\\" class=\\"modal-img\\"/><div class=\\"modal-body\\"><h3 data-testid=\\"title\\">Image title</h3><p data-testid=\\"description\\"></p></div></div>"`;

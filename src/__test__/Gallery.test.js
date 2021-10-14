@@ -7,6 +7,7 @@ import {
 
 import { shallow, configure, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
+import React from "react";
 
 import { unmountComponentAtNode } from "react-dom";
 import Gallery from "./../pages/Gallery";
