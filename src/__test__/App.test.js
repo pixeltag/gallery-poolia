@@ -1,11 +1,15 @@
 import {
   render,
-  screen,
   cleanup,
 } from "@testing-library/react";
 import { unmountComponentAtNode } from "react-dom";
 
+import { shallow, configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+
 import App from "./../App";
+
+configure({ adapter: new Adapter() });
 
 let container = null;
 beforeEach(() => {
@@ -26,4 +30,11 @@ test("App component renders correctly", async () => {
   const container = render(<App />);
   const mainElement = await container.findByRole("main");
   expect(mainElement).toBeInTheDocument();
+});
+
+
+test("Gallery component should match the snapshot", () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.html()).toMatchSnapshot();
+  cleanup();
 });
