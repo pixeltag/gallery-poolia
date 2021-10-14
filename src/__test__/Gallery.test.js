@@ -5,7 +5,7 @@ import {
   waitFor,
 } from "@testing-library/react";
 
-import { shallow, configure, mount } from "enzyme";
+import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import React from "react";
 

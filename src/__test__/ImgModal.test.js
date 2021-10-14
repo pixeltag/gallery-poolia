@@ -1,4 +1,4 @@
-import { render, cleanup, waitFor } from "@testing-library/react";
+import { render, cleanup } from "@testing-library/react";
 import { unmountComponentAtNode } from "react-dom";
 
 import { shallow, configure } from "enzyme";
