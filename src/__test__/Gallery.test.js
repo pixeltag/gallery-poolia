@@ -5,7 +5,7 @@ import {
   waitFor,
 } from "@testing-library/react";
 
-import { shallow, configure } from "enzyme";
+import { shallow, configure, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 
 import { unmountComponentAtNode } from "react-dom";
@@ -60,4 +60,15 @@ test("fetchImages has been called once when component initial", async () => {
   expect(
     await waitFor(() => screen.findByTestId("list", {}, { timeout: 3000 }))
   ).toBeInTheDocument();
+});
+
+
+test("child's callback function fire open modal fn", async () => {
+  const openModalMocked = jest.fn()
+  const wrapper = shallow(<Gallery />);
+  const child =  await waitFor(() => wrapper.find("ImgFigure"))
+  child.prop.openModalCallback = openModalMocked;
+  child.prop.openModalCallback()
+  expect(openModalMocked).toHaveBeenCalled();
+  cleanup();
 });

@@ -23,7 +23,7 @@ const ImgFigure = ({ title, src, full, description, openModalCallback }) => {
     >
       <img src={src} alt={title} />
       <figcaption className="title-figure">
-        <h3>{title ? title : "Image title"}</h3>
+        <h3 data-testid="title">{title ? title : "Image title"}</h3>
       </figcaption>
     </figure>
   );
