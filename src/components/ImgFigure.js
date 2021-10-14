@@ -1,19 +1,19 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 
 const ImgFigure = ({ title, src, full, description, openModalCallback }) => {
   const handleOpenModal = () => {
     openModalCallback({ full, description, title });
   };
 
-  useEffect(() => {
-    document.addEventListener("keydown", enterPressHandler , false);
-  }, []);
-
-  const enterPressHandler = e => {
+  const enterPressHandler = useCallback((e) => {
     if (e.keyCode === 13) {
       document.activeElement.click();
     }
-  }
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("keydown", enterPressHandler, false);
+  }, [enterPressHandler]);
 
   return (
     <figure

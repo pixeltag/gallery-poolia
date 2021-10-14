@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "../assets/css/Gallery.css";
-import { getImagesServices } from "../libs/utils";
+import { fetchImages } from "../libs/utils";
 import ImgFigure from "../components/ImgFigure";
 import ImgModal from "../components/ImgModal";
 
@@ -11,13 +11,15 @@ const Gallery = () => {
 
   useEffect(() => {
     // get data from img service
-    getImagesServices()
-      .then((res) => setImgData(res.data.images))
-      .catch((err) => console.log(err));
-    
-    // handle escape press 
-    document.addEventListener('keydown', escapePressHandler, false);
+    fetchImagesData();
   }, []);
+
+  const fetchImagesData = useCallback(async () => {
+    const response = await fetchImages();
+    setImgData(response.images);
+  }, []);
+
+  useEffect(() =>  document.addEventListener("keydown", escapePressHandler, false));
 
   const openModal = (data) => {
     setImgPreview(data);
@@ -38,13 +40,17 @@ const Gallery = () => {
   return (
     <React.Fragment>
       <section className="gallery-container">
-        <h2 className="hide">Poolia Gallery</h2>
+        <h2 className="hide">Gallery Section</h2>
         {imgData.length > 0 ? (
-          imgData.map((img, index) => (
-            <ImgFigure {...img} key={index} openModalCallback={openModal} />
-          ))
+          <div data-testid="list">
+            {
+              imgData.map((img, index) => (
+              <ImgFigure {...img} key={index} openModalCallback={openModal} />
+              ))
+            }
+          </div>
         ) : (
-          <div className="not-found">Not data, try again later</div>
+          <div className="not-found">Loading</div>
         )}
       </section>
 

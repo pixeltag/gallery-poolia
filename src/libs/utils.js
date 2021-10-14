@@ -1,5 +1,7 @@
 import axios from 'axios';
 
-export function getImagesServices() {
-    return axios.get("/data.json");
+export const fetchImages = async ()  => {
+    const response = await axios.get("/data.json");
+    return response.data;
 }
+
