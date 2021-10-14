@@ -19,7 +19,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:watch": "react-scripts test --watch",
+    "test:cy": "react-scripts start & cypress open",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -46,6 +46,7 @@
     "@cypress/react": "^5.10.1",
     "@cypress/webpack-dev-server": "^1.6.0",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
-    "cypress": "^8.6.0"
+    "cypress": "^8.6.0",
+    "cypress-plugin-tab": "^1.0.5"
   }
 }
